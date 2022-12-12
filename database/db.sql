@@ -1,4 +1,4 @@
-CREATE DATABASE db_links;
+CREATE DATABASE IF NOT EXISTS db_links;
 
 USE db_links;
 

@@ -10,11 +10,11 @@ const MySqlStore = require('express-mysql-session');
 const { database } = require('./keys');
 
 //initializations
-const app = express();
+const app = express(); 
 require('./src/lib/passport');
 
 //settings
-app.set('port', process.env.PORT || 4000)
+app.set('port', process.env.PORT || 3000) 
 app.set('views', path.join(__dirname, 'src/views')); 
 app.engine('.hbs', engine({
     defaultLayout: 'main',
@@ -26,7 +26,7 @@ app.engine('.hbs', engine({
 
 app.set('view engine', '.hbs')
 
-//Middlewares
+//Middlewares  
 app.use(session({
     secret: 'jmpcsession',
     resave: false,
@@ -38,7 +38,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(passport.initialize());
-app.use(passport.session())
+app.use(passport.session()) 
 
 //Global Variables
 app.use((req, res, next) => {
